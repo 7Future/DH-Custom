@@ -13,7 +13,7 @@ local configs = {
 
 local boxsettings = {
     box = {
-        Showbox = true,
+        Showbox = false,
 
         boxsize = Vector3.new(3.3, 3, 2.8), -- Box Size
         markercolor = Color3.fromRGB(1, 120, 145), -- Marrker Color
@@ -50,7 +50,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             if configs.main.notifications == true then
                 Plr = FindClosestUser()
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "Private",
+                    Title = "DH Customs [BETA]",
                     Text = "Unlocked;"
                 })
             end
@@ -59,7 +59,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             configs.main.enabled = true
             if configs.main.notifications == true then
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "Private",
+                    Title = "DH Customs [BETA]",
                     Text = "Locked On;  " .. tostring(Plr.Character.Humanoid.DisplayName)
                 })
             end
