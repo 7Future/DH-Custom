@@ -52,13 +52,9 @@ local Window = Rayfield:CreateWindow({
     end,
  })
 
- local Button = Tab:CreateButton({
-    Name = "",
-    Callback = function()
-    end,
- })
 
 
 
 
+ 
  Rayfield:LoadConfiguration()
