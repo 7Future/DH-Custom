@@ -1,5 +1,3 @@
--- Feature 1 [Aim Lock]
-
 -- main aimlock settings
 local configs = {
     main = {
