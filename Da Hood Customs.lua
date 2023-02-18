@@ -21,7 +21,7 @@ local Window = Rayfield:CreateWindow({
        Subtitle = "Key System",
        Note = "Join the discord (discord.gg/CjGr5y8m7z)",
        FileName = "DHCustomsKey",
-       SaveKey = true,
+       SaveKey = false,
        GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key 
        Key = "//MIDNIGHT.EXPLOITS//"
  }
@@ -46,9 +46,9 @@ local Window = Rayfield:CreateWindow({
  local Section = Tab:CreateSection("Combat")
  
  local Button = Tab:CreateButton({
-    Name = "AimLock",
+    Name = "Button Example",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/blob/main/AimLock.lua",true))()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/blob/main/AimLock.lua"))()
     end,
  })
 
@@ -56,5 +56,5 @@ local Window = Rayfield:CreateWindow({
 
 
 
- 
+
  Rayfield:LoadConfiguration()
