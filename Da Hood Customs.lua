@@ -48,7 +48,7 @@ local Window = Rayfield:CreateWindow({
  local Button = Tab:CreateButton({
     Name = "AimLock",
     Callback = function()
-   -- Aim Lock Loadstring
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/blob/main/AimLock.lua",true))()
     end,
  })
 
