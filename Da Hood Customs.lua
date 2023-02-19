@@ -73,7 +73,7 @@ local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
 
 local Button = Tab:CreateButton({
-   Name = "Swim Fly (E)",
+   Name = "Funny Walk (E)",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/SwimFly.lua"))()
    end,
