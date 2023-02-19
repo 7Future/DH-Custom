@@ -42,17 +42,42 @@ local Window = Rayfield:CreateWindow({
  },
  })
 
- local Tab = Window:CreateTab("Combat", 4483362458) -- Title, Image
+ local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Combat")
  
  local Button = Tab:CreateButton({
-    Name = "AimLock",
+    Name = "AimLock (C)",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
     end,
  })
 
+ local Tab = Window:CreateTab("Miscellaneous", 12541856734) -- Title, Image
+ local Section = Tab:CreateSection("Miscellaneous")
 
+ local Button = Tab:CreateButton({
+   Name = "AntiKick",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Unfocused Window Optimization",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
+local Section = Tab:CreateSection("Character")
+
+local Button = Tab:CreateButton({
+   Name = "Swim Fly (E)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
 
 
 

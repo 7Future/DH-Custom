@@ -46,7 +46,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             if configs.main.notifications == true then
                 Plr = FindClosestUser()
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "DH Customs (Press C)",
+                    Title = "DH Customs",
                     Text = "Unlocked;"
                 })
             end
@@ -55,7 +55,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             configs.main.enabled = true
             if configs.main.notifications == true then
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "DH Customs (Press C)",
+                    Title = "DH Customs",
                     Text = "Locked On;  " .. tostring(Plr.Character.Humanoid.DisplayName)
                 })
             end
