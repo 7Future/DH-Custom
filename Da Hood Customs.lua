@@ -1,6 +1,7 @@
 getgenv().SecureMode = true
+
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+
 
 local Window = Rayfield:CreateWindow({
     Name = "DH Customs",
@@ -30,7 +31,7 @@ local Window = Rayfield:CreateWindow({
 
  Rayfield:Notify({
     Title = "DH Customs",
-    Content = "ByPassed Anti-Cheat",
+    Content = "Make sure to bypass the anti cheat in the miscellaneous tab",
     Duration = 10,
     Image = 4483362458,
     Actions = {
@@ -43,6 +44,7 @@ local Window = Rayfield:CreateWindow({
  },
  })
 
+ -- COMBAT
  local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Combat")
  
@@ -53,6 +55,7 @@ local Window = Rayfield:CreateWindow({
     end,
  })
 
+ -- MISCELLANEOUS
  local Tab = Window:CreateTab("Miscellaneous", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Miscellaneous")
 
@@ -60,6 +63,13 @@ local Window = Rayfield:CreateWindow({
    Name = "Anti Kick",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Bypass AntiCheat",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
    end,
 })
 
@@ -84,6 +94,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
+-- CHARACTER
 local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
 
