@@ -94,14 +94,6 @@ local Button = Tab:CreateButton({
    end,
 })
 
-
-local Button = Tab:CreateButton({
-   Name = "Macro (X)",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Macro.lua"))()
-   end,
-})
-
 local Button = Tab:CreateButton({
    Name = "Head Less",
    Callback = function()
@@ -116,11 +108,6 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "NoClip (B)",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/NoClip.lua"))()
-   end,
-})
+
 
  Rayfield:LoadConfiguration()
