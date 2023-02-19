@@ -1,5 +1,6 @@
 getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+loadstring(game:HttpGet("LINK"))()
 
 local Window = Rayfield:CreateWindow({
     Name = "DH Customs",
@@ -29,8 +30,8 @@ local Window = Rayfield:CreateWindow({
 
  Rayfield:Notify({
     Title = "DH Customs",
-    Content = "Join the discord // (discord.gg/CjGr5y8m7z)",
-    Duration = 6.5,
+    Content = "ByPassed Anti-Cheat",
+    Duration = 10,
     Image = 4483362458,
     Actions = {
        Ignore = {
@@ -76,6 +77,13 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Reach",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
 local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
 
@@ -87,6 +95,32 @@ local Button = Tab:CreateButton({
 })
 
 
+local Button = Tab:CreateButton({
+   Name = "Macro (X)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
 
+local Button = Tab:CreateButton({
+   Name = "Head Less",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "No SlowDown",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "NoClip (B)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
 
  Rayfield:LoadConfiguration()
