@@ -75,7 +75,7 @@ local Section = Tab:CreateSection("Character")
 local Button = Tab:CreateButton({
    Name = "Funny Walk (E)",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/SwimFly.lua"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Walk.lua"))()
    end,
 })
 
