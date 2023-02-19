@@ -1,6 +1,6 @@
 getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
-loadstring(game:HttpGet("LINK"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
 
 local Window = Rayfield:CreateWindow({
     Name = "DH Customs",
@@ -80,7 +80,7 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Reach",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Reach.lua"))()
    end,
 })
 
@@ -98,28 +98,28 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Macro (X)",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Macro.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Head Less",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/HeadLess.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "No SlowDown",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20SlowDown.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "NoClip (B)",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/NoClip.lua"))()
    end,
 })
 
