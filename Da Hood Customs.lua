@@ -58,14 +58,14 @@ local Window = Rayfield:CreateWindow({
  local Button = Tab:CreateButton({
    Name = "AntiKick",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Unfocused Window Optimization",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Unfocused%20Window%20Optimization.lua"))()
    end,
 })
 
@@ -75,7 +75,7 @@ local Section = Tab:CreateSection("Character")
 local Button = Tab:CreateButton({
    Name = "Swim Fly (E)",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/SwimFly.lua"))()
    end,
 })
 
