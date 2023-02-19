@@ -46,7 +46,7 @@ local Window = Rayfield:CreateWindow({
  local Section = Tab:CreateSection("Combat")
  
  local Button = Tab:CreateButton({
-    Name = "AimLock (C)",
+    Name = "Aim Lock (C)",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
     end,
@@ -56,9 +56,16 @@ local Window = Rayfield:CreateWindow({
  local Section = Tab:CreateSection("Miscellaneous")
 
  local Button = Tab:CreateButton({
-   Name = "AntiKick",
+   Name = "Anti Kick",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Chat Bypasser",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Chat%20Bypasser.lua"))()
    end,
 })
 

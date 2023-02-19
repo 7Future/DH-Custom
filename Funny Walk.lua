@@ -1,16 +1,16 @@
---// Services
+
 
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
---// Variables
+
 
 local Key = Enum.KeyCode.E
 local Flying = false
 local Typing = false
 
---// Typing Check
+
 
 UserInputService.TextBoxFocused:Connect(function()
     Typing = true
@@ -20,7 +20,7 @@ UserInputService.TextBoxFocusReleased:Connect(function()
     Typing = false
 end)
 
---// Main
+
 
 RunService.RenderStepped:Connect(function()
     if Flying then

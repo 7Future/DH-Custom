@@ -1,8 +1,8 @@
-enabled = true --chat "/spy" to toggle
-spyOnMyself = true --if true will check your messages too
-public = false --if true will chat the logs publicly (fun, risky)
-publicItalics = true --if true will use /me to stand out
-privateProperties = { --customize private logs
+enabled = true
+spyOnMyself = true
+public = false
+publicItalics = true
+privateProperties = {
 	Color = Color3.fromRGB(0,255,255); 
 	Font = Enum.Font.SourceSansBold;
 	TextSize = 18;
