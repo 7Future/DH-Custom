@@ -6,7 +6,7 @@ getgenv().ChatMode = false
 getgenv().NotifMode = true
     getgenv().PartMode = true
     getgenv().AirshotFunccc = true
-    getgenv().Partz = "HumanoidRootPart"
+    getgenv().Partz = "Head"
 
     _G.Types = {
         Ball = Enum.PartType.Ball,
@@ -77,7 +77,7 @@ end)
         	end	
                if getgenv().NotifMode then
     			game.StarterGui:SetCore("SendNotification", {
-        Title = "";
+        Title = "DH Customs";
         Text = "Kill: "..tostring(Plr.Character.Humanoid.DisplayName);
     
     })
@@ -88,13 +88,13 @@ end)
         	end	
         if getgenv().NotifMode then
                         game.StarterGui:SetCore("SendNotification", {
-                   Title = "",
-                   Text = "ezz",
+                   Title = "DH Customs",
+                   Text = "[UnLocked]",
                    Duration = 1
                })
            elseif getgenv().Target == false then
                         game.StarterGui:SetCore("SendNotification", {
-                   Title = "",
+                   Title = "DH Customs",
                    Text = "Target isn't enabled",
                    Duration = 5
      
