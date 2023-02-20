@@ -101,7 +101,7 @@ local Section = Tab:CreateSection("Character")
 local Button = Tab:CreateButton({
    Name = "Funny Macro (E)",
    Callback = function()
-   loadstring(game:HttpGet(""))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
    end,
 })
 
