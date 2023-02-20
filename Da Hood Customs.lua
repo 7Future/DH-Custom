@@ -90,21 +90,21 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Free Animations",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Free%20Animations.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Low GFX",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Low%20GFX.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Anti Bag",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
    end,
 })
 
@@ -143,7 +143,7 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Inf Stamina",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Inf%20Stamina.lua"))()
    end,
 })
 
