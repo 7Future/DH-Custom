@@ -88,9 +88,23 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Reach",
+   Name = "Free Animations",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Reach.lua"))()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Low GFX",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Anti Bag",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
    end,
 })
 
@@ -99,7 +113,7 @@ local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
 
 local Button = Tab:CreateButton({
-   Name = "Funny Macro (E)",
+   Name = "Funny Macro (Q)",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
    end,
@@ -119,6 +133,18 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Reach",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Reach.lua"))()
+   end,
+})
 
+local Button = Tab:CreateButton({
+   Name = "Inf Stamina",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
 
  Rayfield:LoadConfiguration()
