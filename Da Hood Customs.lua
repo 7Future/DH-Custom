@@ -31,14 +31,14 @@ local Window = Rayfield:CreateWindow({
 
  Rayfield:Notify({
     Title = "DH Customs",
-    Content = "Make sure to bypass the anti cheat in the miscellaneous tab",
+    Content = "BYPASSED ANTI CHEAT [CLICK OKAY]",
     Duration = 10,
     Image = 4483362458,
     Actions = {
        Ignore = {
           Name = "Okay!",
           Callback = function()
-          print("MKE")
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
        end
     },
  },
@@ -96,13 +96,6 @@ local Button = Tab:CreateButton({
    Name = "Anti Kick",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Bypass AntiCheat",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
    end,
 })
 
