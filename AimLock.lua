@@ -1,9 +1,9 @@
-getgenv().Target = true
+    getgenv().Target = true
 
-    getgenv().Key = Enum.KeyCode.E
-getgenv().Prediction = 0.1439227582
-getgenv().ChatMode = false
-getgenv().NotifMode = true
+    getgenv().Key = Enum.KeyCode.Q
+    getgenv().Prediction = 0.1439227582
+    getgenv().ChatMode = false
+    getgenv().NotifMode = true
     getgenv().PartMode = true
     getgenv().AirshotFunccc = true
     getgenv().Partz = "Head"
