@@ -55,6 +55,20 @@ local Window = Rayfield:CreateWindow({
     end,
  })
 
+ local Button = Tab:CreateButton({
+   Name = "Silent Aim (C)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Tracing (Q)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
  -- MISCELLANEOUS
  local Tab = Window:CreateTab("Miscellaneous", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Miscellaneous")
@@ -102,6 +116,17 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
+   Name = "RGB Guns",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
+-- TOGGLES
+local Tab = Window:CreateTab("Toggles, 12541856734) -- Title, Image
+local Section = Tab:CreateSection("Toggles")
+
+local Button = Tab:CreateButton({
    Name = "Anti Bag",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
@@ -113,7 +138,7 @@ local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
 
 local Button = Tab:CreateButton({
-   Name = "Funny Macro (Q)",
+   Name = "Funny Macro (X)",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
    end,
@@ -144,6 +169,17 @@ local Button = Tab:CreateButton({
    Name = "Inf Stamina",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Inf%20Stamina.lua"))()
+   end,
+})
+
+-- AUTO FARMS
+local Tab = Window:CreateTab("Auto Farm", 12541856734) -- Title, Image
+local Section = Tab:CreateSection("Auto Farm")
+
+local Button = Tab:CreateButton({
+   Name = "Hospital Farm",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
    end,
 })
 

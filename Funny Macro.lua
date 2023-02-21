@@ -6,7 +6,7 @@ local Players = game:GetService("Players")
 
 
 
-local Key = Enum.KeyCode.Q
+local Key = Enum.KeyCode.X
 local Flying = false
 local Typing = false
 
