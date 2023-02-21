@@ -122,17 +122,6 @@ local Button = Tab:CreateButton({
    end,
 })
 
--- TOGGLES
-local Tab = Window:CreateTab("Toggles, 12541856734") -- Title, Image
-local Section = Tab:CreateSection("Toggles")
-
-local Button = Tab:CreateButton({
-   Name = "Anti Bag",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
-   end,
-})
-
 -- CHARACTER
 local Tab = Window:CreateTab("Character", 12541856734) -- Title, Image
 local Section = Tab:CreateSection("Character")
@@ -169,6 +158,13 @@ local Button = Tab:CreateButton({
    Name = "Inf Stamina",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Inf%20Stamina.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Anti Bag",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
    end,
 })
 
