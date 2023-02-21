@@ -44,6 +44,25 @@ local Window = Rayfield:CreateWindow({
  },
  })
 
+  -- UPDATES
+  local Tab = Window:CreateTab("Updates", 12541856734) -- Title, Image
+  local Section = Tab:CreateSection("Latest Version: 0.1.0")
+
+  local Label = Tab:CreateLabel("NOTE: JOIN THE DISCORD (discord.gg/CjGr5y8m7z)")
+
+  local Button = Tab:CreateButton({
+   Name = "Copy Invite",
+   Callback = function()
+   setclipboard("discord.gg/CjGr5y8m7z")
+   end,
+})
+
+  local Paragraph = Tab:CreateParagraph({Title = "Update: 0.1.0", Content = ""})
+  local Label = Tab:CreateLabel("[-] ADDED HOSPITAL AUTO FARM")
+  local Label = Tab:CreateLabel("[-] ADDED SILENT AIM")
+  local Label = Tab:CreateLabel("[-] ADDED TRACING")
+  local Label = Tab:CreateLabel("[-] ADDED RGB GUNS")
+
  -- COMBAT
  local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Combat")
