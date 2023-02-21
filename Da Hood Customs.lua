@@ -175,7 +175,7 @@ local Section = Tab:CreateSection("Auto Farm")
 local Button = Tab:CreateButton({
    Name = "Hospital Farm",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Hospital%20Auto%20Farm"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Hospital%20AF.lua"))()
    end,
 })
 
