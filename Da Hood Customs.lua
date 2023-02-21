@@ -48,8 +48,6 @@ local Window = Rayfield:CreateWindow({
   local Tab = Window:CreateTab("Updates", 12541856734) -- Title, Image
   local Section = Tab:CreateSection("Latest Version: 0.1.0")
 
-  local Label = Tab:CreateLabel("NOTE: JOIN THE DISCORD (discord.gg/CjGr5y8m7z)")
-
   local Button = Tab:CreateButton({
    Name = "Copy Invite",
    Callback = function()
@@ -58,10 +56,8 @@ local Window = Rayfield:CreateWindow({
 })
 
   local Paragraph = Tab:CreateParagraph({Title = "Update: 0.1.0", Content = ""})
-  local Label = Tab:CreateLabel("[-] ADDED HOSPITAL AUTO FARM")
   local Label = Tab:CreateLabel("[-] ADDED SILENT AIM")
   local Label = Tab:CreateLabel("[-] ADDED TRACING")
-  local Label = Tab:CreateLabel("[-] ADDED RGB GUNS")
 
  -- COMBAT
  local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
@@ -177,17 +173,6 @@ local Button = Tab:CreateButton({
    Name = "Anti Bag",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
-   end,
-})
-
--- AUTO FARMS
-local Tab = Window:CreateTab("Auto Farm", 12541856734) -- Title, Image
-local Section = Tab:CreateSection("Auto Farm")
-
-local Button = Tab:CreateButton({
-   Name = "Hospital Farm",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Hospital%20AF.lua"))()
    end,
 })
 
