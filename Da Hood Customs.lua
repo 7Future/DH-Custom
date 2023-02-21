@@ -58,14 +58,14 @@ local Window = Rayfield:CreateWindow({
  local Button = Tab:CreateButton({
    Name = "Silent Aim (C)",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Silent%20Aim.lua"))()
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Tracing (Q)",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Tracing.lua"))()
    end,
 })
 
@@ -118,12 +118,12 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "RGB Guns",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/RGB%20Guns.lua"))()
    end,
 })
 
 -- TOGGLES
-local Tab = Window:CreateTab("Toggles, 12541856734) -- Title, Image
+local Tab = Window:CreateTab("Toggles, 12541856734") -- Title, Image
 local Section = Tab:CreateSection("Toggles")
 
 local Button = Tab:CreateButton({
@@ -179,7 +179,7 @@ local Section = Tab:CreateSection("Auto Farm")
 local Button = Tab:CreateButton({
    Name = "Hospital Farm",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Hospital%20Auto%20Farm"))()
    end,
 })
 
