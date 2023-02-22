@@ -1,16 +1,10 @@
 getgenv().Ordium = {
-    SilentAim = {
-        Key = "C",
+    Tracing = {
+        Key = 'C',
         Enabled = true,
-        Prediction = 0.119,
-        AimingType = "Closest Point",
+        Prediction = 8,
         AimPart = "HumanoidRootPart",
-        
-        ChanceData = {UseChance = false, Chance = 100},
-        FOVData = {Radius = 80, Visibility = true, Filled = false},
-
-        AimingData = {CheckKnocked = true, CheckGrabbed = true,
-        CheckWalls = true},
+        TracingOptions = {Strength = "Hard" , AimingType = "Closest Part",  Smoothness = 0.11} 
     }
 }
 

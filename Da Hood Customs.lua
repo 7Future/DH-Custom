@@ -78,6 +78,13 @@ local Window = Rayfield:CreateWindow({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Tracing (C)",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
+   end,
+})
+
  -- MISCELLANEOUS
  local Tab = Window:CreateTab("Miscellaneous", 12541856734) -- Title, Image
  local Section = Tab:CreateSection("Miscellaneous")
