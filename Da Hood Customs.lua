@@ -161,7 +161,7 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "No JumpCooldown",
    Callback = function()
-   loadstring(game:HttpGet("LINK"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20JumpCooldown.lua"))()
    end,
 })
 
