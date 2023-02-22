@@ -10,7 +10,7 @@ getgenv().FOV_VISIBLE = true  -- [ Self Explanatory ]
  
 getgenv().DontShootThesePeople = {  -- [ WHITELIST TABLE: List Of Who NOT To Shoot, edit like this. "Contain quotations with their name and then a semi-colon afterwards for each line" ; ]
  
-	"hiree123384";
+	"hiree123384"
  
 }
  
@@ -40,7 +40,7 @@ FOV_CIRCLE.Visible = getgenv().FOV_VISIBLE
 FOV_CIRCLE.Filled = false
 FOV_CIRCLE.Thickness = 1
 FOV_CIRCLE.Transparency = 1
-FOV_CIRCLE.Color = Color3.fromRGB(153, 50, 204)
+FOV_CIRCLE.Color = Color3.new(0, 1, 0)
 FOV_CIRCLE.Radius = getgenv().FOV
 FOV_CIRCLE.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
  
