@@ -3,7 +3,7 @@ getgenv().Ordium = {
         Key = "C",
         Enabled = true,
         Prediction = 0.119,
-        AimingType = "Closest Point", -- Closest Part, Default
+        AimingType = "Closest Point",
         AimPart = "HumanoidRootPart",
         
         ChanceData = {UseChance = false, Chance = 100},
@@ -12,13 +12,6 @@ getgenv().Ordium = {
         AimingData = {CheckKnocked = true, CheckGrabbed = true,
         CheckWalls = true},
 
-    },
-    Tracing = {
-        Key = 'Q',
-        Enabled = false,
-        Prediction = 8,
-        AimPart = "HumanoidRootPart",
-        TracingOptions = {Strength = "Hard" , AimingType = "Closest Part",  Smoothness = 0.11} 
     }
 }
 

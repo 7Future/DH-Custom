@@ -59,7 +59,6 @@ local Window = Rayfield:CreateWindow({
 
   local Paragraph = Tab:CreateParagraph({Title = "Update: 0.1.0", Content = ""})
   local Label = Tab:CreateLabel("[-] ADDED SILENT AIM")
-  local Label = Tab:CreateLabel("[-] ADDED TRACING")
 
  -- COMBAT
  local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
@@ -76,13 +75,6 @@ local Window = Rayfield:CreateWindow({
    Name = "Silent Aim (C)",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Silent%20Aim.lua"))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Tracing (Q)",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Tracing.lua"))()
    end,
 })
 
