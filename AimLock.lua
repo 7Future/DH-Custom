@@ -1,7 +1,7 @@
 getgenv().Target = true
 getgenv().Key = Enum.KeyCode.Q
 getgenv().Prediction = 0.1439227582
-getgenv().ChatMode = true
+getgenv().ChatMode = false
 getgenv().NotifMode = true
 getgenv().PartMode = true
 getgenv().AirshotFunccc = true
@@ -73,7 +73,7 @@ end)
                if Locking then
                Plr =  getClosestPlayerToCursor()
                 if getgenv().ChatMode then
-        local A_1 = "MDE ON TOP"..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+        local A_1 = "USE DH CUSTOMS"..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
         	end	
         if getgenv().NotifMode then
     	game.StarterGui:SetCore("SendNotification", {
