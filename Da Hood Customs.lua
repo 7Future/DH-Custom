@@ -58,7 +58,9 @@ local Window = Rayfield:CreateWindow({
 })
 
   local Paragraph = Tab:CreateParagraph({Title = "Update: 0.1.0", Content = ""})
-  local Label = Tab:CreateLabel("[-] ADDED TRACING")
+  local Label = Tab:CreateLabel("[-] FIXED TRACING")
+  local Label = Tab:CreateLabel("[-] FIXED SILENTAIM")
+  local Label = Tab:CreateLabel("[-] ADDED NOJUMP COOLDOWN")
 
  -- COMBAT
  local Tab = Window:CreateTab("Combat", 12541856734) -- Title, Image
@@ -153,6 +155,13 @@ local Button = Tab:CreateButton({
    Name = "No SlowDown",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20SlowDown.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "No JumpCooldown",
+   Callback = function()
+   loadstring(game:HttpGet("LINK"))()
    end,
 })
 
