@@ -1,219 +1,133 @@
-getgenv().Ordium = {
-    SilentAim = {
-        Key = "C",
-        Enabled = true,
-        Prediction = 0.119,
-        AimingType = "Closest Point",
-        AimPart = "HumanoidRootPart",
-        
-        ChanceData = {UseChance = false, Chance = 100},
-        FOVData = {Radius = 80, Visibility = true, Filled = false},
-
-        AimingData = {CheckKnocked = true, CheckGrabbed = true,
-        CheckWalls = true},
-    }
+getgenv().Prediction =  (  .1239592  )   -- [ PREDICTION: Lower Prediction: Lower Ping | Higher Prediction: Higher Ping  ]
+ 
+getgenv().FOV =  (  150  )   -- [ FOV RADIUS: Increases Or Decreases FOV Radius ]
+ 
+getgenv().AimKey =  (  "c"  )  -- [ TOGGLE KEY: Toggles Silent Aim On And Off ]
+ 
+getgenv().Notifier = true
+ 
+getgenv().FOV_VISIBLE = true  -- [ Self Explanatory ]
+ 
+getgenv().DontShootThesePeople = {  -- [ WHITELIST TABLE: List Of Who NOT To Shoot, edit like this. "Contain quotations with their name and then a semi-colon afterwards for each line" ; ]
+ 
+	"AimLockPsycho";
+ 
 }
-
-local Ordium = {functions = {}}
-
-local Vector2New, Cam, Mouse, client, find, Draw, Inset, players, RunService, UIS=
-    Vector2.new,
-    workspace.CurrentCamera,
-    game.Players.LocalPlayer:GetMouse(),
-    game.Players.LocalPlayer,
-    table.find,
-    Drawing.new,
-    game:GetService("GuiService"):GetGuiInset().Y,
-    game.Players, 
-    game.RunService,
-    game:GetService("UserInputService")
-
-
-local mf, rnew = math.floor, Random.new
-
-local Targetting
-local lockedCamTo
-
-local Circle = Draw("Circle")
-Circle.Thickness = 1
-Circle.Transparency = 0.7
-Circle.Color = Color3.new(1,1,1)
-
-Ordium.functions.update_FOVs = function ()
-    if not (Circle) then
-        return Circle
-    end
-    Circle.Radius =  getgenv().Ordium.SilentAim.FOVData.Radius * 3
-    Circle.Visible = getgenv().Ordium.SilentAim.FOVData.Visibility
-    Circle.Filled = getgenv().Ordium.SilentAim.FOVData.Filled
-    Circle.Position = Vector2New(Mouse.X, Mouse.Y + (Inset))
-    return Circle
+ 
+--[[
+		Do Not Edit Anything Beyond This Point. 
+]]
+ 
+local SilentAim = true
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Players = game:GetService("Players")
+local Mouse = LocalPlayer:GetMouse()
+local Camera = game:GetService("Workspace").CurrentCamera
+local connections = getconnections(game:GetService("LogService").MessageOut)
+for _, v in ipairs(connections) do
+	v:Disable()
 end
-
-Ordium.functions.onKeyPress = function(inputObject)
-    if inputObject.KeyCode == Enum.KeyCode[getgenv().Ordium.SilentAim.Key:upper()] then
-        getgenv().Ordium.SilentAim.Enabled = not getgenv().Ordium.SilentAim.Enabled
-    end
-
-    if inputObject.KeyCode == Enum.KeyCode[getgenv().Ordium.Tracing.Key:upper()] then
-        getgenv().Ordium.Tracing.Enabled = not getgenv().Ordium.Tracing.Enabled
-        if getgenv().Ordium.Tracing.Enabled then
-            lockedCamTo = Ordium.functions.returnClosestPlayer(getgenv().Ordium.SilentAim.ChanceData.Chance)
-        end
-    end
+ 
+getrawmetatable = getrawmetatable
+setreadonly = setreadonly
+getconnections = getconnections
+hookmetamethod = hookmetamethod
+getgenv = getgenv
+Drawing = Drawing
+ 
+local FOV_CIRCLE = Drawing.new("Circle")
+FOV_CIRCLE.Visible = getgenv().FOV_VISIBLE
+FOV_CIRCLE.Filled = false
+FOV_CIRCLE.Thickness = 1
+FOV_CIRCLE.Transparency = 1
+FOV_CIRCLE.Color = Color3.fromRGB(153, 50, 204),
+FOV_CIRCLE.Radius = getgenv().FOV
+FOV_CIRCLE.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+ 
+local Options = {
+	Torso = "HumanoidRootPart";
+	Head = "Head";
+}
+ 
+local function MoveFovCircle()
+	pcall(function()
+		local DoIt = true
+		spawn(function()
+			while DoIt do task.wait()
+				FOV_CIRCLE.Position = Vector2.new(Mouse.X, (Mouse.Y + 36))
+			end
+		end)
+	end)
+end coroutine.wrap(MoveFovCircle)()
+ 
+game.StarterGui:SetCore("SendNotification", {Title = "DH Customs", Text = "TOGGLED", Duration = 5,}) -- initially on.
+ 
+local function ItsOn()
+	game.StarterGui:SetCore("SendNotification", {Title = "DH Customs", Text = "TOGGLED", Duration = 5,})
 end
-
-UIS.InputBegan:Connect(Ordium.functions.onKeyPress)
-
-
-Ordium.functions.wallCheck = function(direction, ignoreList)
-    if not getgenv().Ordium.SilentAim.AimingData.CheckWalls then
-        return true
-    end
-
-    local ray = Ray.new(Cam.CFrame.p, direction - Cam.CFrame.p)
-    local part, _, _ = game:GetService("Workspace"):FindPartOnRayWithIgnoreList(ray, ignoreList)
-
-    return not part
+local function ItsOff()
+	game.StarterGui:SetCore("SendNotification", {Title = "DH Customs", Text = "UN-TOGGLED", Duration = 5,})
 end
-
-Ordium.functions.pointDistance = function(part)
-    local OnScreen = Cam.WorldToScreenPoint(Cam, part.Position)
-    if OnScreen then
-        return (Vector2New(OnScreen.X, OnScreen.Y) - Vector2New(Mouse.X, Mouse.Y)).Magnitude
-    end
-end
-
-Ordium.functions.returnClosestPart = function(Character)
-    local data = {
-        dist = math.huge,
-        part = nil,
-        filteredparts = {},
-        classes = {"Part", "BasePart", "MeshPart"}
-    }
-
-    if not (Character and Character:IsA("Model")) then
-        return data.part
-    end
-    local children = Character:GetChildren()
-    for _, child in pairs(children) do
-        if table.find(data.classes, child.ClassName) then
-            table.insert(data.filteredparts, child)
-            for _, part in pairs(data.filteredparts) do
-                local dist = Ordium.functions.pointDistance(part)
-                if Circle.Radius > dist and dist < data.dist then
-                    data.part = part
-                    data.dist = dist
-                end
-            end
-        end
-    end
-    return data.part
-end
-
-Ordium.functions.returnClosestPlayer = function (amount)
-    local data = {
-        dist = 1/0,
-        player = nil
-    }
-
-    amount = amount or nil
-
-    for _, player in pairs(players:GetPlayers()) do
-        if (player.Character and player ~= client) then
-            local dist = Ordium.functions.pointDistance(player.Character.HumanoidRootPart)
-            if Circle.Radius > dist and dist < data.dist and 
-            Ordium.functions.wallCheck(player.Character.Head.Position,{client, player.Character}) then
-                data.dist = dist
-                data.player = player
-            end
-        end
-    end
-    local calc = mf(rnew().NextNumber(rnew(), 0, 1) * 100) / 100
-    local use = getgenv().Ordium.SilentAim.ChanceData.UseChance
-    if use and calc <= mf(amount) / 100 then
-        return calc and data.player
-    else
-        return data.player
-    end
-end
-
-Ordium.functions.setAimingType = function (player, type)
-    local previousSilentAimPart = getgenv().Ordium.SilentAim.AimPart
-    local previousTracingPart = getgenv().Ordium.Tracing.AimPart
-    if type == "Closest Part" then
-        getgenv().Ordium.SilentAim.AimPart = tostring(Ordium.functions.returnClosestPart(player.Character))
-        getgenv().Ordium.Tracing.AimPart = tostring(Ordium.functions.returnClosestPart(player.Character))
-    elseif type == "Closest Point" then
-        Ordium.functions.returnClosestPoint()
-    elseif type == "Default" then
-        getgenv().Ordium.SilentAim.AimPart = previousSilentAimPart
-        getgenv().Ordium.Tracing.AimPart = previousTracingPart
-    else
-        getgenv().Ordium.SilentAim.AimPart = previousSilentAimPart
-        getgenv().Ordium.Tracing.AimPart = previousTracingPart
-    end
-end
-
-Ordium.functions.aimingCheck = function (player)
-    if getgenv().Ordium.SilentAim.AimingData.CheckKnocked == true and player and player.Character then
-        if player.Character.BodyEffects["K.O"].Value then
-            return true
-        end
-    end
-    if getgenv().Ordium.SilentAim.AimingData.CheckGrabbed == true and player and player.Character then
-        if player.Character:FindFirstChild("GRABBING_CONSTRAINT") then
-            return true
-        end
-    end
-    return false
-end
-
-
-local lastRender = 0
-local interpolation = 0.01
-
-RunService.RenderStepped:Connect(function(delta)
-    local valueTypes = 1.375
-    lastRender = lastRender + delta
-    while lastRender > interpolation do
-        lastRender = lastRender - interpolation
-    end
-    if getgenv().Ordium.Tracing.Enabled and lockedCamTo ~= nil and getgenv().Ordium.Tracing.TracingOptions.Strength == "Hard" then
-        local Vel =  lockedCamTo.Character[getgenv().Ordium.Tracing.AimPart].Velocity / (getgenv().Ordium.Tracing.Prediction * valueTypes)
-        local Main = CFrame.new(Cam.CFrame.p, lockedCamTo.Character[getgenv().Ordium.Tracing.AimPart].Position + (Vel))
-        Cam.CFrame = Cam.CFrame:Lerp(Main ,getgenv().Ordium.Tracing.TracingOptions.Smoothness , Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-        Ordium.functions.setAimingType(lockedCamTo, getgenv().Ordium.Tracing.TracingOptions.AimingType)
-    elseif getgenv().Ordium.Tracing.Enabled and lockedCamTo ~= nil and getgenv().Ordium.Tracing.TracingOptions.Strength == "Soft" then
-        local Vel =  lockedCamTo.Character[getgenv().Ordium.Tracing.AimPart].Velocity / (getgenv().Ordium.Tracing.Prediction / valueTypes)
-        local Main = CFrame.new(Cam.CFrame.p, lockedCamTo.Character[getgenv().Ordium.Tracing.AimPart].Position + (Vel))
-        Cam.CFrame = Cam.CFrame:Lerp(Main ,getgenv().Ordium.Tracing.TracingOptions.Smoothness , Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-        Ordium.functions.setAimingType(lockedCamTo, getgenv().Ordium.Tracing.TracingOptions.AimingType)
-    else
-
-    end
+ 
+Mouse.KeyDown:Connect(function(KeyPressed)
+	if KeyPressed == (getgenv().AimKey:lower()) then
+		if SilentAim == false then
+			FOV_CIRCLE.Color = Color3.new(0, 1, 0)
+			SilentAim = true
+			ItsOn()
+		elseif SilentAim == true then
+			FOV_CIRCLE.Color = Color3.new(1, 0, 0)
+			SilentAim = false
+			ItsOff()
+		end
+	end
 end)
-
-task.spawn(function ()
-    while task.wait() do
-        if Targetting then
-            Ordium.functions.setAimingType(Targetting, getgenv().Ordium.SilentAim.AimingType)
-        end
-        Ordium.functions.update_FOVs()
-    end
+Mouse.KeyDown:Connect(function(Rejoin)
+	if Rejoin == "=" then
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		game:GetService("TeleportService"):Teleport(game.PlaceId, LocalPlayer)
+	end
 end)
-
-
-local __index
-__index = hookmetamethod(game,"__index", function(Obj, Property)
-    if Obj:IsA("Mouse") and Property == "Hit" then
-        Targetting = Ordium.functions.returnClosestPlayer(getgenv().Ordium.SilentAim.ChanceData.Chance)
-        if Targetting ~= nil and getgenv().Ordium.SilentAim.Enabled and not Ordium.functions.aimingCheck(Targetting) then
-            local currentvelocity = Targetting.Character[getgenv().Ordium.SilentAim.AimPart].Velocity
-            local currentposition = Targetting.Character[getgenv().Ordium.SilentAim.AimPart].CFrame
-
-            return currentposition + (currentvelocity * getgenv().Ordium.SilentAim.Prediction)
-        end
-    end
-    return __index(Obj, Property)
+ 
+local oldIndex = nil 
+oldIndex = hookmetamethod(game, "__index", function(self, Index)
+	if self == Mouse and (Index == "Hit") then 
+		if SilentAim then
+			local Distance = 9e9
+			local Target = nil
+			local Players = game:GetService("Players")
+			local LocalPlayer = game:GetService("Players").LocalPlayer
+			local Camera = game:GetService("Workspace").CurrentCamera
+			for _, v in pairs(Players:GetPlayers()) do 
+				if not table.find(getgenv().DontShootThesePeople, v.Name) then
+					if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 then
+						local Enemy = v.Character	
+						local CastingFrom = CFrame.new(Camera.CFrame.Position, Enemy[Options.Torso].CFrame.Position) * CFrame.new(0, 0, -4)
+						local RayCast = Ray.new(CastingFrom.Position, CastingFrom.LookVector * 9000)
+						local World, ToSpace = game:GetService("Workspace"):FindPartOnRayWithIgnoreList(RayCast, {LocalPlayer.Character:FindFirstChild("Head")})
+						local RootWorld = (Enemy[Options.Torso].CFrame.Position - ToSpace).magnitude
+						if RootWorld < 4 then		
+							local RootPartPosition, Visible = Camera:WorldToScreenPoint(Enemy[Options.Torso].Position)
+							if Visible then
+								local Real_Magnitude = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(RootPartPosition.X, RootPartPosition.Y)).Magnitude
+								if Real_Magnitude < Distance and Real_Magnitude < FOV_CIRCLE.Radius then
+									Distance = Real_Magnitude
+									Target = Enemy
+								end
+							end
+						end
+					end
+				end
+			end
+ 
+			if Target ~= nil and Target[Options.Torso] and Target:FindFirstChild("Humanoid").Health > 0 then
+				if SilentAim then
+					local ShootThis = Target[Options.Torso]
+					local Predicted_Position = ShootThis.CFrame + (ShootThis.Velocity * getgenv().Prediction + Vector3.new(0,-.5,0))
+					return ((Index == "Hit" and Predicted_Position))
+				end
+			end
+		end
+	end
+	return oldIndex(self, Index)
 end)
