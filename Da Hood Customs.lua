@@ -2,6 +2,8 @@ getgenv().SecureMode = true
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
+-- [ANTI CHEAT BYPASSED]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
 
 local Window = Rayfield:CreateWindow({
     Name = "DH Customs",
@@ -13,7 +15,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "DH Customs"
     },
     Discord = {
-       Enabled = false,
+       Enabled = true,
        Invite = "CjGr5y8m7z", --E.g. discord.gg/ABCD would be ABCD.
        RememberJoins = false
     },
@@ -38,7 +40,7 @@ local Window = Rayfield:CreateWindow({
        Ignore = {
           Name = "Okay!",
           Callback = function()
-          loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+          print("MKE")
        end
     },
  },

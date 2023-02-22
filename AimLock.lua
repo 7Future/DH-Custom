@@ -1,21 +1,21 @@
-    getgenv().Target = true
-
-    getgenv().Key = Enum.KeyCode.Q
-    getgenv().Prediction = 0.1439227582
-    getgenv().ChatMode = false
-    getgenv().NotifMode = true
-    getgenv().PartMode = true
-    getgenv().AirshotFunccc = true
-    getgenv().Partz = "Head"
-
+getgenv().Target = true
+getgenv().Key = Enum.KeyCode.Q
+getgenv().Prediction = 0.1439227582
+getgenv().ChatMode = true
+getgenv().NotifMode = true
+getgenv().PartMode = true
+getgenv().AirshotFunccc = true
+getgenv().Partz = "HumanoidRootPart"
+    --
     _G.Types = {
         Ball = Enum.PartType.Ball,
         Block = Enum.PartType.Block, 
         Cylinder = Enum.PartType.Cylinder
     }
-                    
-    	local Tracer = Instance.new("Part", game.Workspace)
-    Tracer.Name = "gay"	
+    
+    --variables                 
+    local Tracer = Instance.new("Part", game.Workspace)
+    Tracer.Name = "Part"	
     Tracer.Anchored = true		
     Tracer.CanCollide = false
     Tracer.Transparency = 0.8
@@ -25,7 +25,7 @@
     Tracer.Color = Color3.fromRGB(128,128,128)
     
     --
-    local plr = game.Players.LocalPlayer
+local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 local Runserv = game:GetService("RunService")
 
@@ -73,10 +73,10 @@ end)
                if Locking then
                Plr =  getClosestPlayerToCursor()
                 if getgenv().ChatMode then
-        local A_1 = "Get some females "..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+        local A_1 = "MDE ON TOP"..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
         	end	
-               if getgenv().NotifMode then
-    			game.StarterGui:SetCore("SendNotification", {
+        if getgenv().NotifMode then
+    	game.StarterGui:SetCore("SendNotification", {
         Title = "DH Customs";
         Text = "Kill: "..tostring(Plr.Character.Humanoid.DisplayName);
     
@@ -84,12 +84,12 @@ end)
     end
     elseif not Locking then
          if getgenv().ChatMode then
-        local A_1 = "bro needs females.. IMAO" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+        local A_1 = "USE DH CUSTOMS" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
         	end	
         if getgenv().NotifMode then
-                        game.StarterGui:SetCore("SendNotification", {
+                   game.StarterGui:SetCore("SendNotification", {
                    Title = "DH Customs",
-                   Text = "[UnLocked]",
+                   Text = "Unlocked",
                    Duration = 1
                })
            elseif getgenv().Target == false then
