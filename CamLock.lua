@@ -1,7 +1,7 @@
 local Settings = {
     AimLock = {
         Enabled = true,
-        Aimlockkey = "v",
+        Aimlockkey = "b",
         Prediction = 0.135,
         Aimpart = 'HumanoidRootPart',
         Notifications = true
@@ -10,7 +10,7 @@ local Settings = {
         Thickness = 3.5,
         Transparency = 1,
         Color = Color3.fromRGB(153, 50, 204),
-        FOV = true
+        FOV = false
     }
 
 }
@@ -26,10 +26,6 @@ local Line = Drawing.new("Line")
 local Circle = Drawing.new("Circle")
 
 local Plr
-
-
-
-
 
 Mouse.KeyDown:Connect(function(KeyPressed)
     if KeyPressed == (Settings.AimLock.Aimlockkey) then
@@ -96,10 +92,11 @@ RunService.Heartbeat:connect(function()
         Circle.Thickness = 2
         Circle.Radius = 60
         Circle.Color = Settings.Settings.Color
-
+    elseif Settings.AimLock.FOV == true then
+        Circle.Visible = true
     else
-        Line.Visible = false
         Circle.Visible = false
+        Line.Visible = false
     end
 end)
 
