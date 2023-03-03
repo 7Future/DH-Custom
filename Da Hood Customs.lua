@@ -4,7 +4,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/mai
 
 -- INIT
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("DH Customs", 5013109572)
+local venyx = library.new("Venyx", 5013109572)
 
 -- THEMES
 local themes = {
@@ -46,10 +46,6 @@ local section1 = page:addSection("Auto Farm")
 
 section1:addButton("Cash Auto Farm", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
-end)
-
-section1:addToggle("Cash Auto Farm", nil, function(value)
-   (loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))(), value)
 end)
 
 -- MISCELLANEOUS
