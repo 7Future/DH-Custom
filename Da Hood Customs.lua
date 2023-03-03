@@ -1,8 +1,12 @@
--- init
+-- MAIN
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/ModDetector.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+
+-- INIT
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("DH Customs", 5013109572)
 
--- themes
+-- THEMES
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24),
 	Glow = Color3.fromRGB(0, 0, 0),
@@ -29,7 +33,19 @@ section1:addButton("Tracing (V)", function()
 end)
 
 section1:addButton("CamLock (B)", function()
-	loadstring(game:HttpGet("LINK"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/CamLock.lua"))()
+end)
+
+section1:addButton("StreamAble", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/StreamAble.lua"))()
+end)
+
+-- AUTO FARM
+local page = venyx:addPage("Auto Farm", 5012544693)
+local section1 = page:addSection("Auto Farm")
+
+section1:addButton("Cash Auto Farm", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
 end)
 
 -- MISCELLANEOUS
