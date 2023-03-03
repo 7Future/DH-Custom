@@ -48,6 +48,10 @@ section1:addButton("Cash Auto Farm", function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
 end)
 
+section1:addToggle("Cash Auto Farm", nil, function(value)
+   (loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))(), value)
+end)
+
 -- MISCELLANEOUS
 local page = venyx:addPage("Miscellaneous", 5012544693)
 local section1 = page:addSection("Miscellaneous")
