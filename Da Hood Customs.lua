@@ -1,121 +1,89 @@
--- MAIN
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/ModDetector.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cypherdh/VanisUILIB/main/.gitignore'))()
 
--- INIT
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Venyx", 5013109572)
+local Window = library:CreateWindow("Mid-Night Exploits", "V.0.5.0", 10044538000)
 
--- THEMES
-local themes = {
-	Background = Color3.fromRGB(24, 24, 24),
-	Glow = Color3.fromRGB(0, 0, 0),
-	Accent = Color3.fromRGB(10, 10, 10),
-	LightContrast = Color3.fromRGB(20, 20, 20),
-	DarkContrast = Color3.fromRGB(14, 14, 14),  
-	TextColor = Color3.fromRGB(255, 255, 255)
-}
+local Tab = Window:CreateTab("DH Customs")
 
--- COMBAT
-local page = venyx:addPage("Combat", 5012544693)
-local section1 = page:addSection("Combat")
+local Page = Tab:CreateFrame("Combat")
 
-section1:addButton("Aim Lock (Q)", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
+Button = Page:CreateButton("AimLock", "Keybind: Q", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
 end)
 
-section1:addButton("Silent Aim (C)", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Silent%20Aim.lua"))()
+Button = Page:CreateButton("Silent Aim", "Keybind: C", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Silent%20Aim.lua"))()
 end)
 
-section1:addButton("Tracing (V)", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Tracing.lua"))()
+Button = Page:CreateButton("Tracing", "Keybind: V", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Tracing.lua"))()
 end)
 
-section1:addButton("CamLock (B)", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/CamLock.lua"))()
+Button = Page:CreateButton("CamLock", "Keybind: B", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/CamLock.lua"))()
 end)
 
-section1:addButton("StreamAble", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/StreamAble.lua"))()
+Button = Page:CreateButton("StreamAble", "[BETA]", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
 end)
 
--- AUTO FARM
-local page = venyx:addPage("Auto Farm", 5012544693)
-local section1 = page:addSection("Auto Farm")
+local Page = Tab:CreateFrame("Auto Farms")
 
-section1:addButton("Cash Auto Farm [BETA]", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
+Button = Page:CreateButton("Cash Auto Farm", "[BETA]", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
 end)
 
--- MISCELLANEOUS
-local page = venyx:addPage("Miscellaneous", 5012544693)
-local section1 = page:addSection("Miscellaneous")
+local Page = Tab:CreateFrame("Miscellaneous")
 
-section1:addButton("Anti Kick", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
+Button = Page:CreateButton("Anti Kick", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
 end)
 
-section1:addButton("Chat Bypasser", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Chat%20Bypasser.lua"))()
+Button = Page:CreateButton("Chat Bypasser", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Chat%20Bypasser.lua"))()
 end)
 
-section1:addButton("Unfocused Window Optimization", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Unfocused%20Window%20Optimization.lua"))()
+Button = Page:CreateButton("Unfocused Window Optimization", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Unfocused%20Window%20Optimization.lua"))()
 end)
 
-section1:addButton("Free Animations", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Free%20Animations.lua"))()
+Button = Page:CreateButton("Free Animations", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Free%20Animations.lua"))()
 end)
 
-section1:addButton("Low GFX", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Low%20GFX.lua"))()
-end)
-section1:addButton("RGB Guns", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/RGB%20Guns.lua"))()
+Button = Page:CreateButton("Low GFX", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Low%20GFX.lua"))()
 end)
 
--- CHARACTER
-local page = venyx:addPage("Character", 12541856734)
-local section1 = page:addSection("Character")
-
-section1:addButton("Funny Macro (X)", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
+Button = Page:CreateButton("RGB Guns", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/RGB%20Guns.lua"))()
 end)
 
-section1:addButton("Head Less", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/HeadLess.lua"))()
+local Page = Tab:CreateFrame("Character")
+
+Button = Page:CreateButton("Funny Macro/Fly", "Keybind: X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
 end)
 
-section1:addButton("No SlowDown", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20SlowDown.lua"))()
+Button = Page:CreateButton("Head Less", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/HeadLess.lua"))()
 end)
 
-section1:addButton("No JumpCooldown", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20JumpCooldown.lua"))()
+Button = Page:CreateButton("No SlowDown", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20SlowDown.lua"))()
 end)
 
-section1:addButton("Reach", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Reach.lua"))()
+Button = Page:CreateButton("No JumpCooldown", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/No%20JumpCooldown.lua"))()
 end)
 
-section1:addButton("Inf Stamina", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Inf%20Stamina.lua"))()
+Button = Page:CreateButton("Reach", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Reach.lua"))()
 end)
 
-section1:addButton("Anti Bag", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
+Button = Page:CreateButton("Inf Stamina", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Inf%20Stamina.lua"))()
 end)
 
--- THEMES
-local theme = venyx:addPage("Theme", 5012544693)
-local colors = theme:addSection("Colors")
-
-for theme, color in pairs(themes) do
-	colors:addColorPicker(theme, color, function(color3)
-		venyx:setTheme(theme, color3)
-	end)
-end
-
--- LOAD
-venyx:SelectPage(venyx.pages[1], true)
+Button = Page:CreateButton("Anti Bag", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Anti%20Bag.lua"))()
+end)
