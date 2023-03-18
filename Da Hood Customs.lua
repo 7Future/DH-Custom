@@ -6,8 +6,7 @@ local win = SolarisLib:New({
 })
 
 local tab = win:Tab("Combat")
-
-local sec = tab:Section("[UPDATED]")
+local sec = tab:Section("UPDATED")
 
 sec:Button("AimLock", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AimLock.lua"))()
@@ -35,7 +34,6 @@ SolarisLib:Notification("Enabled StreamAble", "Use at your own peril as this fun
 end)
 
 local tab = win:Tab("Auto Farms")
-local sec = tab:Section("[UPDATED]")
 
 sec:Button("CashAutoFarm", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
