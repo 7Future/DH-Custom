@@ -1,3 +1,7 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/ModDetector.lua"))()
+
+
 local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua"))()
 
 local win = SolarisLib:New({
