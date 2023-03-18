@@ -33,7 +33,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/mai
 SolarisLib:Notification("Enabled StreamAble", "Use at your own peril as this function is still in beta.")
 end)
 
-local tab = win:Tab("Auto Farms")
+local tab2 = win:Tab("Auto Farms")
 
 sec:Button("CashAutoFarm", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
@@ -45,7 +45,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/mai
 SolarisLib:Notification("Enabled ShoeAutoFarm", "Use at your own peril as this function is still in beta.")
 end)
 
-local tab = win:Tab("Miscellaneous")
+local tab3 = win:Tab("Miscellaneous")
 
 sec:Button("AntiKick", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
@@ -77,7 +77,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/mai
 SolarisLib:Notification("Enabled RGBGuns", "DH Customs")
 end)
 
-local tab = win:Tab("Character")
+local tab4 = win:Tab("Character")
 
 sec:Button("FunnyMacro/Fly", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
@@ -114,7 +114,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/mai
 SolarisLib:Notification("Enabled AntiBag", "DH Customs")
 end)
 
-local tab = win:Tab("Teleports")
+local tab5 = win:Tab("Teleports")
 
 sec:Button("Bank[Inside][🏦💵]", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-481.471344, 23.0955524, -283.71936, -0.998737395, 1.3537707e-08, 0.0502357483, 1.0023502e-08, 1, -7.02062053e-08, -0.0502357483, -6.96140248e-08, -0.998737395)
