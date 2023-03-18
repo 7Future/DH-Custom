@@ -1,3 +1,7 @@
+-- ANTI CHEAT // MOD DETECTOR
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/ModDetector.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
+
 local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cypherdh/VanisUILIB/main/.gitignore'))()
 
 local Window = library:CreateWindow("Mid-Night Exploits", "V.0.5.0", 10044538000)
