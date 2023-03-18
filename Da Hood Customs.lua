@@ -212,8 +212,3 @@ sec:Button("theatre[🎥🍿]", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1004.41998, 21.2311783, -180.738998, 1, -8.01115263e-08, 2.51585895e-14, 8.01115263e-08, 1, -4.26443165e-08, -2.17422871e-14, 4.26443165e-08, 1)
 SolarisLib:Notification("Teleported", "DH Customs")
 end)
-
-
--- ANTI CHEAT // MOD DETECTOR
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/ModDetector.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiCheatBypass.lua"))()
