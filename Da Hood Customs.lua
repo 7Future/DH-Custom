@@ -34,7 +34,7 @@ SolarisLib:Notification("Enabled StreamAble", "Use at your own peril as this fun
 end)
 
 local tab2 = win:Tab("Auto Farms")
-local sec2 = tab:Section("Auto Farms")
+local sec2 = tab2:Section("Auto Farms")
 
 sec2:Button("CashAutoFarm", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Cash%20Auto%20Farm.lua"))()
@@ -47,7 +47,7 @@ SolarisLib:Notification("Enabled ShoeAutoFarm", "Use at your own peril as this f
 end)
 
 local tab3 = win:Tab("Miscellaneous")
-local sec3 = tab:Section("Miscellaneous")
+local sec3 = tab3:Section("Miscellaneous")
 
 sec3:Button("AntiKick", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/AntiKick.lua"))()
@@ -80,7 +80,7 @@ SolarisLib:Notification("Enabled RGBGuns", "DH Customs")
 end)
 
 local tab4 = win:Tab("Character")
-local sec4 = tab:Section("Character")
+local sec4 = tab4:Section("Character")
 
 sec4:Button("FunnyMacro/Fly", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7Future/DH-Custom/main/Funny%20Macro.lua"))()
@@ -118,7 +118,7 @@ SolarisLib:Notification("Enabled AntiBag", "DH Customs")
 end)
 
 local tab5 = win:Tab("Teleports")
-local sec5 = tab:Section("Teleports")
+local sec5 = tab5:Section("Teleports")
 
 sec5:Button("Bank[Inside][🏦💵]", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-481.471344, 23.0955524, -283.71936, -0.998737395, 1.3537707e-08, 0.0502357483, 1.0023502e-08, 1, -7.02062053e-08, -0.0502357483, -6.96140248e-08, -0.998737395)
